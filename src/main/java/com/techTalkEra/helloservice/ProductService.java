@@ -7,39 +7,41 @@ import java.util.concurrent.atomic.AtomicLong;
 
 @Service
 public class ProductService {
+	
+	private final ProductRepository repo;
+	
+	public ProductService(ProductRepository repo)
+	{
+		this.repo=repo;
+	}
 
-    private final Map<Long, Product> store = new ConcurrentHashMap<>();
-    private final AtomicLong seq = new AtomicLong(1);
+    //private final Map<Long, Product> store = new ConcurrentHashMap<>();
 
     public Product create(Product p) {
-        long id = seq.getAndIncrement();
-        p.setId(id);
-        store.put(id, p);
-        return p;
+        return repo.save(p);
     }
 
     public List<Product> findAll() {
-        return new ArrayList<>(store.values());
+        return new ArrayList<>(repo.findAll());
     }
 
     public Product findById(Long id) {
-        Product p = store.get(id);
-        if (p == null) throw new NotFoundException("Product " + id + " not found");
-        return p;
+      return repo.findById(id).orElseThrow(() -> new NotFoundException("Product " + id + " not found"));
     }
 
     public Product update(Long id, Product updated) {
-        Product existing = store.get(id);
-        if (existing == null) throw new NotFoundException("Product " + id + " not found");
-        existing.setName(updated.getName());
-        existing.setPrice(updated.getPrice());
-        existing.setStock(updated.getStock());
-        store.put(id, existing);
-        return existing;
-    }
+        return repo.findById(id).map(existing -> {
+          existing.setName(updated.getName());
+          existing.setPrice(updated.getPrice());
+          existing.setStock(updated.getStock());
+          return repo.save(existing);
+        }).orElseThrow(() -> new NotFoundException("Product " + id + " not found"));
+      }
 
-    public void delete(Long id) {
-        if (store.remove(id) == null) throw new NotFoundException("Product " + id + " not found");
-    }
+      public void delete(Long id) {
+        if (!repo.existsById(id)) throw new NotFoundException("Product " + id + " not found");
+        repo.deleteById(id);
+      }
+   
 }
 

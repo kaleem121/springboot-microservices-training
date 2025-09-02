@@ -40,5 +40,12 @@ Runs on port 8081
   "stock": 20
   
 }
+----------------------------------------------------------------------------
+###Add a “Day 3” section with:
 
+Docker command used
+
+DB URL/credentials (dev)
+
+Note on ddl-auto: update
 
