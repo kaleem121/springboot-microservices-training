@@ -4,6 +4,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import com.techTalkEra.helloservice.dto.ProductCreateRequest;
+import com.techTalkEra.helloservice.dto.ProductResponse;
+import com.techTalkEra.helloservice.dto.ProductUpdateRequest;
+
 import jakarta.validation.Valid;
 import java.net.URI;
 import java.util.List;
@@ -18,24 +22,25 @@ public class ProductController {
     public ProductController(ProductService service) { this.service = service; }
 
     @PostMapping
-    public ResponseEntity<Product> create(@Valid @RequestBody Product p) {
-        Product saved = service.create(p);
-        return ResponseEntity.created(URI.create("/products/" + saved.getId())).body(saved);
+    public ResponseEntity<ProductResponse> create(@Valid @RequestBody ProductCreateRequest req) {
+        Product saved = service.create(ProductMapper.toEntity(req));
+        return ResponseEntity.created(URI.create("/products/" + saved.getId())).body(ProductMapper.toResponse(saved));
     }
 
     @GetMapping
-    public List<Product> all() {
-        return service.findAll();
+    public List<ProductResponse> all() {
+        return ProductMapper.toResponseList(service.findAll());
     }
 
     @GetMapping("/{id}")
-    public Product one(@PathVariable Long id) {
-        return service.findById(id);
+    public ProductResponse one(@PathVariable Long id) {
+        return ProductMapper.toResponse(service.findById(id));
     }
 
     @PutMapping("/{id}")
-    public Product update(@PathVariable Long id, @Valid @RequestBody Product p) {
-        return service.update(id, p);
+    public ProductResponse update(@PathVariable Long id, @Valid @RequestBody ProductUpdateRequest req) {
+      Product updated = service.update(id, req);
+      return ProductMapper.toResponse(updated);
     }
 
     @DeleteMapping("/{id}")

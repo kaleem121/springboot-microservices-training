@@ -1,6 +1,9 @@
 package com.techTalkEra.helloservice;
 
 import org.springframework.stereotype.Service;
+
+import com.techTalkEra.helloservice.dto.ProductUpdateRequest;
+
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
@@ -29,13 +32,11 @@ public class ProductService {
       return repo.findById(id).orElseThrow(() -> new NotFoundException("Product " + id + " not found"));
     }
 
-    public Product update(Long id, Product updated) {
-        return repo.findById(id).map(existing -> {
-          existing.setName(updated.getName());
-          existing.setPrice(updated.getPrice());
-          existing.setStock(updated.getStock());
-          return repo.save(existing);
-        }).orElseThrow(() -> new NotFoundException("Product " + id + " not found"));
+    public Product update(Long id, ProductUpdateRequest req) {
+    	return repo.findById(id).map(existing -> {
+    	    ProductMapper.copy(req, existing);
+    	    return repo.save(existing);
+    	  }).orElseThrow(() -> new NotFoundException("Product " + id + " not found"));
       }
 
       public void delete(Long id) {
