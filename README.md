@@ -62,6 +62,8 @@ ProductUpdateRequest → input for PUT (full replace)
 
 ProductResponse → output to client
 
+and ProductMapper for mapping these DTOs to entity(Product)
+
 **Validation rules (on DTOs)**
 
 name: @NotBlank
@@ -81,4 +83,15 @@ Handles: NotFound (404), Validation errors (400), Bad JSON, Wrong type
 Dependency: springdoc-openapi-starter-webmvc-ui
 
 URL: http://localhost:8081/swagger-ui/index.html
+
+## 📅 Day 5 – Profiles & Logging
+- **Profiles:**
+  - dev → MySQL localhost:3306, `ddl-auto=update`, SQL shown
+  - prod → `ddl-auto=validate` (no schema changes), quieter logs
+  - Run: `--spring.profiles.active=dev|prod`(RunAs ->Config->program argument)
+- **Logging:**
+  - SLF4J in services (`info/debug/warn`)
+  - File: `logs/app.log`
+- Swagger (optional): enabled in dev, disabled in prod
+
 
