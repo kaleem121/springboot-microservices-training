@@ -16,10 +16,12 @@ public class ProductService {
 	private static final Logger log = LoggerFactory.getLogger(ProductService.class);
 	
 	private final ProductRepository repo;
+	 private final ProductMetrics metrics;
 	
-	public ProductService(ProductRepository repo)
+	public ProductService(ProductRepository repo,ProductMetrics metrics)
 	{
 		this.repo=repo;
+		this.metrics=metrics;
 	}
 
     //private final Map<Long, Product> store = new ConcurrentHashMap<>();
@@ -27,7 +29,9 @@ public class ProductService {
     public Product create(Product p) {
     	
     	log.info("Creating product: {}", p.getName());
-        return repo.save(p);
+        Product saved = repo.save(p);
+        metrics.countCreated(saved.getName());
+        return saved;
     }
 
     public List<Product> findAll() {

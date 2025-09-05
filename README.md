@@ -94,4 +94,15 @@ URL: http://localhost:8081/swagger-ui/index.html
   - File: `logs/app.log`
 - Swagger (optional): enabled in dev, disabled in prod
 
+----------------------------------------------------------------------------------------------------------------------------------------------------
+## 📅 Day 6 – Actuator (Health, Info, Metrics)
+- Added Actuator starter
+- Dev: health/info/metrics/env/beans/loggers
+- Prod: only health + info
+- Health shows DB connection status
+- Info shows app metadata (build, version)
+- Metrics available (http.server.requests, jvm.memory.used, etc.)
+- Custom metric: products.created
+
+
 
