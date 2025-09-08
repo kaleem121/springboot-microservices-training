@@ -43,8 +43,9 @@ Actuator → http://localhost:8081/actuator
 - [Day 7 – Review + Mini Tests](notes/day7.md)
 
 
-##📂 Project Structure
+## 📂 Project Structure
 springboot-microservices-training/
+
  ├── README.md          # professional summary
  
  ├── notes/             # detailed daily notes
@@ -60,7 +61,7 @@ springboot-microservices-training/
  
  └── logs/             # ignored by Git (defined in .gitignore)
 
-##🛠️ Tech Stack
+## 🛠️ Tech Stack
 
 Java 21
 
@@ -77,7 +78,7 @@ Swagger / OpenAPI
 JUnit 5, MockMvc, H2 DB
 
 
-##🎯 Tags (Milestones)
+## 🎯 Tags (Milestones)
 
 week1-done → CRUD + Profiles + Logging + Actuator + Tests
 
