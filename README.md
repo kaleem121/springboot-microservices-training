@@ -34,32 +34,30 @@ Actuator → http://localhost:8081/actuator
 
 ## 📒 Learning Journal (Day-wise)
 
-I am maintaining detailed day-by-day notes while building this project:
+- [Day 1 – Spring Boot setup](notes/day1.md)
+- [Day 2 – CRUD with JPA](notes/day2.md)
+- [Day 3 – DB + Docker](notes/day3.md)
+- [Day 4 – DTOs, Validation, Global Errors](notes/day4.md)
+- [Day 5 – Profiles & Logging](notes/day5.md)
+- [Day 6 – Actuator](notes/day6.md)
+- [Day 7 – Review + Mini Tests](notes/day7.md)
 
-Day 1 – Spring Boot setup
-
-Day 2 – CRUD with JPA
-
-Day 3 – DB + Docker
-
-Day 4 – DTOs, Validation, Global Errors
-
-Day 5 – Profiles & Logging
-
-Day 6 – Actuator
-
-Day 7 – Review + Mini Tests
 
 ##📂 Project Structure
 springboot-microservices-training/
  ├── README.md          # professional summary
+ 
  ├── notes/             # detailed daily notes
+ 
  │   ├── day1.md
  │   ├── day2.md
  │   ├── ...
  │   └── day7.md
+ 
  ├── src/               # application source code
+ 
  ├── pom.xml           # Maven build file 
+ 
  └── logs/             # ignored by Git (defined in .gitignore)
 
 ##🛠️ Tech Stack
