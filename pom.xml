@@ -65,10 +65,17 @@
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 
-
+      <!-- Spring Boot testing starter (JUnit + MockMvc + AssertJ etc.) -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		
+		<!-- In-memory DB only for tests -->
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
