@@ -52,19 +52,14 @@ Day 7 – Review + Mini Tests
 
 ##📂 Project Structure
 springboot-microservices-training/
-
  ├── README.md          # professional summary
-
  ├── notes/             # detailed daily notes
  │   ├── day1.md
  │   ├── day2.md
  │   ├── ...
  │   └── day7.md
-
  ├── src/               # application source code
-
- ├── pom.xml           # Maven build file
- 
+ ├── pom.xml           # Maven build file 
  └── logs/             # ignored by Git (defined in .gitignore)
 
 ##🛠️ Tech Stack
