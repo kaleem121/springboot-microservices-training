@@ -6,7 +6,7 @@ This repo contains step-by-step progress from **Week 1 (foundations)** to advanc
 ---
 
 ## ✅ Week 1 (Day 1–7) – Foundations
-- Hello service, REST CRUD (Product)
+- Product service, REST CRUD (Product)
 - JPA + MySQL (Docker)
 - DTOs + Validation + Global Exception Handling
 - Profiles (dev/prod) + Logging
@@ -63,7 +63,7 @@ springboot-microservices-training/
 
 ## 🛠️ Tech Stack
 
-Java 21
+Java 17
 
 Spring Boot
 

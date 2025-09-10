@@ -1,5 +1,5 @@
 # Day 1 – Spring Boot setup
-# Hello Service
+# Hello Service and then Product Service
 
 A minimal Spring Boot application.
 

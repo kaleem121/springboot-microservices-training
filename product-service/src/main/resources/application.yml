@@ -1,0 +1,17 @@
+server:
+  port: 8081
+spring:
+ application:
+  name: product-service
+
+# default, can be overridden per profile
+logging:
+  level:
+    root: INFO
+    com.techTalkEra.helloservice: DEBUG
+  file:
+    name: logs/app.log
+
+
+
+
