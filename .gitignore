@@ -1,1 +1,19 @@
-/.metadata/
+# IDE/Workspace
+.project
+.classpath
+.settings/
+.metadata/
+
+# Maven
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# Logs
+logs/
+*.log
+*.gz
+
+# OS
+.DS_Store
+Thumbs.db
+
