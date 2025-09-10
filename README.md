@@ -14,6 +14,10 @@ This repo contains step-by-step progress from **Week 1 (foundations)** to advanc
 - Mini tests (MockMvc, H2)
 - Tag: `week1-done`
 
+## ✅ Week 2 (Day 8–14) – Service-to-Service Communication
+- Day 8: API Gateway (Spring Cloud Gateway)
+- (Upcoming: Order Service, Service Registry, etc.)
+
 ---
 
 ## ▶️ Run (Dev)
@@ -41,6 +45,8 @@ Actuator → http://localhost:8081/actuator
 - [Day 5 – Profiles & Logging](notes/day5.md)
 - [Day 6 – Actuator](notes/day6.md)
 - [Day 7 – Review + Mini Tests](notes/day7.md)
+- [Day 8 – API Gateway](./notes/day8.md) ✅
+
 
 
 ## 📂 Project Structure
@@ -82,4 +88,4 @@ JUnit 5, MockMvc, H2 DB
 
 week1-done → CRUD + Profiles + Logging + Actuator + Tests
 
-week2-done → (API Gateway + Multi-Service Communication, coming soon)
+week2-done → (API Gateway + Multi-Service Communication)
