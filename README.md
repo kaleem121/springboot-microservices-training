@@ -46,6 +46,7 @@ Actuator → http://localhost:8081/actuator
 - [Day 6 – Actuator](notes/day6.md)
 - [Day 7 – Review + Mini Tests](notes/day7.md)
 - [Day 8 – API Gateway](./notes/day8.md) ✅
+- [Day 9 – OrderService](./notes/day9.md) ✅
 
 
 
