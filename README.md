@@ -16,7 +16,10 @@ This repo contains step-by-step progress from **Week 1 (foundations)** to advanc
 
 ## ✅ Week 2 (Day 8–14) – Service-to-Service Communication
 - Day 8: API Gateway (Spring Cloud Gateway)
-- (Upcoming: Order Service, Service Registry, etc.)
+- Day 9: Order Service (created order service)
+- Day 10: Service Discovery (Eureka) + API Gateway dynamic routing (`lb://`)
+- (Upcoming: Centralized Config, Resilience patterns)
+
 
 ---
 
@@ -35,6 +38,8 @@ Swagger UI → http://localhost:8081/swagger-ui/index.html
 
 Actuator → http://localhost:8081/actuator
 
+Eureka Server Dashboard → http://localhost:8761 
+
 
 ## 📒 Learning Journal (Day-wise)
 
@@ -47,6 +52,7 @@ Actuator → http://localhost:8081/actuator
 - [Day 7 – Review + Mini Tests](notes/day7.md)
 - [Day 8 – API Gateway](./notes/day8.md) ✅
 - [Day 9 – OrderService](./notes/day9.md) ✅
+- [Day 10 – Eureka+GatewayRouting](./notes/day10.md) ✅
 
 
 
@@ -89,4 +95,4 @@ JUnit 5, MockMvc, H2 DB
 
 week1-done → CRUD + Profiles + Logging + Actuator + Tests
 
-week2-done → (API Gateway + Multi-Service Communication)
+week2-done → (API Gateway + Order Service + Eureka Service Discovery + Dynamic Routing + + Multi-Service Communication)

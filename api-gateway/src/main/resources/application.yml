@@ -8,17 +8,27 @@ spring:
     gateway:
       routes:
         - id: product-service
-          uri: http://localhost:8081
+          uri: lb://product-service
           predicates:
             - Path=/api/products/**
           filters:
             - StripPrefix=1
         - id: order-service
-          uri: http://localhost:8082
+          uri: lb://order-service
           predicates:
             - Path=/api/orders/**
           filters:
-            - StripPrefix=1         
+            - StripPrefix=1
+      discovery:
+        locator:
+          enabled: true 
+      
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+       
 logging:
  level:
   org.springframework.cloud.gateway: DEBUG
@@ -27,4 +37,4 @@ management:
  endpoints:
    web:
     exposure:
-      include: health,info
+      include: health,info,gateway,metrics
