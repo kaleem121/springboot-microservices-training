@@ -18,7 +18,10 @@ This repo contains step-by-step progress from **Week 1 (foundations)** to advanc
 - Day 8: API Gateway (Spring Cloud Gateway)
 - Day 9: Order Service (created order service)
 - Day 10: Service Discovery (Eureka) + API Gateway dynamic routing (`lb://`)
-- (Upcoming: Centralized Config, Resilience patterns)
+- Day 11: Centralized Config (Spring Cloud Config Server + Local Config Repo)
+  - Config Server created to serve configurations centrally
+  - Product & Order services now load configs from Config Server
+  - Tested fetching configurations via http://localhost:8888/{service}/{profile}
 
 
 ---
@@ -40,6 +43,8 @@ Actuator → http://localhost:8081/actuator
 
 Eureka Server Dashboard → http://localhost:8761 
 
+Config server -> http://localhost:8888/{service}/{profile}
+
 
 ## 📒 Learning Journal (Day-wise)
 
@@ -53,6 +58,7 @@ Eureka Server Dashboard → http://localhost:8761
 - [Day 8 – API Gateway](./notes/day8.md) ✅
 - [Day 9 – OrderService](./notes/day9.md) ✅
 - [Day 10 – Eureka+GatewayRouting](./notes/day10.md) ✅
+- [Day 11 – Centralized Config Server](./notes/day11.md) ✅
 
 
 
@@ -95,4 +101,4 @@ JUnit 5, MockMvc, H2 DB
 
 week1-done → CRUD + Profiles + Logging + Actuator + Tests
 
-week2-done → (API Gateway + Order Service + Eureka Service Discovery + Dynamic Routing + + Multi-Service Communication)
+week2-done → (API Gateway + Order Service + Eureka Service Discovery + Dynamic Routing + Centralized Config)
