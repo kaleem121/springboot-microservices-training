@@ -67,4 +67,21 @@ public class GlobalExceptionHandler {
 	        body.put("path", req.getRequestURI());
 	        return body;
 	      }
+	    
+	    @ExceptionHandler(ProductNotFoundException.class)
+	    public ResponseEntity<String> handleProductNotFoundException(ProductNotFoundException e){
+	    	
+	    	return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+	    	
+	    }
+	    
+	    @ExceptionHandler(ProductServiceDownException.class)
+	    public ResponseEntity<String> handleProductServiceDown(ProductServiceDownException e){
+	    	return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE).body(e.getMessage());
+	    }
+	    
+	    @ExceptionHandler(FeignGenericException.class)
+	    public ResponseEntity<String> handleGeneralException(FeignGenericException e){
+	    	return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+	    }
 }

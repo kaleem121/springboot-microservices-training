@@ -22,6 +22,16 @@ This repo contains step-by-step progress from **Week 1 (foundations)** to advanc
   - Config Server created to serve configurations centrally
   - Product & Order services now load configs from Config Server
   - Tested fetching configurations via http://localhost:8888/{service}/{profile}
+- Day 12: OpenFeign Integration (Short)
+
+  - Integrated OpenFeign in order-service for REST calls to product-service.
+  - Verified communication through the gateway and Eureka Service Discovery.
+
+- Day 13: Feign Exception Handling (Short)
+
+  - Added Custom ErrorDecoder and GlobalExceptionHandler to handle Feign errors gracefully (404, 500, and generic).
+  - Tested both direct and global handling approaches.
+  - (See notes/day13.md for detailed explanation.)
 
 
 ---
@@ -59,6 +69,8 @@ Config server -> http://localhost:8888/{service}/{profile}
 - [Day 9 – OrderService](./notes/day9.md) ✅
 - [Day 10 – Eureka+GatewayRouting](./notes/day10.md) ✅
 - [Day 11 – Centralized Config Server](./notes/day11.md) ✅
+- [Day 12 – OpenFeign Integration](./notes/day12.md) ✅
+- [Day 13 – Feign Exception Handling](./notes/day13.md) ✅
 
 
 
@@ -88,6 +100,8 @@ Spring Boot
 
 Spring Data JPA
 
+Spring Cloud (Gateway, Config, Eureka, OpenFeign)
+
 MySQL (Docker)
 
 Actuator & Micrometer
@@ -101,4 +115,4 @@ JUnit 5, MockMvc, H2 DB
 
 week1-done → CRUD + Profiles + Logging + Actuator + Tests
 
-week2-done → (API Gateway + Order Service + Eureka Service Discovery + Dynamic Routing + Centralized Config)
+week2-done → (API Gateway + Order Service + Eureka Service Discovery + Dynamic Routing + Centralized Config + Feign Integration)

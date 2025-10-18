@@ -22,6 +22,9 @@ spring:
       discovery:
         locator:
           enabled: true 
+
+    config:
+      enabled: false
       
 eureka:
   client:
