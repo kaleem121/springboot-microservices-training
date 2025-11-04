@@ -32,9 +32,27 @@ This repo contains step-by-step progress from **Week 1 (foundations)** to advanc
   - Added Custom ErrorDecoder and GlobalExceptionHandler to handle Feign errors gracefully (404, 500, and generic).
   - Tested both direct and global handling approaches.
   - (See notes/day13.md for detailed explanation.)
+  
+- Day 14: Kafka Integration (Producer + Consumer)
 
+  - Integrated Apache Kafka for asynchronous event-based communication.
 
----
+  - Order Service → Producer: Publishes OrderEvent to topic order-events.
+
+  - Product Service → Consumer: Listens to same topic and processes incoming events.
+
+  - Configured spring.kafka properties in application.yml (no config class).
+
+  - Verified event flow end-to-end via Kafka console and Spring Boot logs.
+   
+   	Command Used : 
+
+  # Start Zookeeper
+ .\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+	
+
+  # Start Kafka Broker
+ .\bin\windows\kafka-server-start.bat .\config\server.properties
 
 ## ▶️ Run (Dev)
 
@@ -71,6 +89,7 @@ Config server -> http://localhost:8888/{service}/{profile}
 - [Day 11 – Centralized Config Server](./notes/day11.md) ✅
 - [Day 12 – OpenFeign Integration](./notes/day12.md) ✅
 - [Day 13 – Feign Exception Handling](./notes/day13.md) ✅
+- [Day 14 – Kafka Integration(Producer+Consumer)](./notes/day14.md) ✅
 
 
 
@@ -115,4 +134,4 @@ JUnit 5, MockMvc, H2 DB
 
 week1-done → CRUD + Profiles + Logging + Actuator + Tests
 
-week2-done → (API Gateway + Order Service + Eureka Service Discovery + Dynamic Routing + Centralized Config + Feign Integration)
+week2-done → (API Gateway + Order Service + Eureka Service Discovery + Dynamic Routing + Centralized Config + Feign Integration + Kafka Integration)
